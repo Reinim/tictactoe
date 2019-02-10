@@ -1,6 +1,14 @@
 import React from 'react';
 import './index.css';
-import Square from "./Square"
+//import Square from "./Square"
+
+function Square(props) {
+    return (
+      <button className="square" onClick={props.onClick}>
+        {props.value}
+      </button>
+    );
+  }
 
 export default class Board extends React.Component {
     constructor(props) {
@@ -24,6 +32,7 @@ export default class Board extends React.Component {
         squares[i] = 'X';
         this.setState({squares: squares});
       }
+
     render() {
       const status = 'Next player: X';
   
